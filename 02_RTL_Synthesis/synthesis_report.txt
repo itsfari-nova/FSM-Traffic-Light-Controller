@@ -1,1 +1,30 @@
+5. Printing statistics.
+
+=== traffic_light ===
+
+   Number of wires:                304
+   Number of wire bits:            394
+   Number of public wires:          13
+   Number of public wire bits:      72
+   Number of ports:                  8
+   Number of port bits:             25
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                378
+     $_ANDNOT_                     110
+     $_AND_                         10
+     $_DFFE_PP0P_                    2
+     $_DFFE_PP1P_                    4
+     $_DFF_PP0_                     34
+     $_DFF_PP1_                      1
+     $_MUX_                         35
+     $_NAND_                        28
+     $_NOR_                         20
+     $_NOT_                          7
+     $_ORNOT_                       27
+     $_OR_                          59
+     $_XNOR_                        11
+     $_XOR_                         30
+
 
