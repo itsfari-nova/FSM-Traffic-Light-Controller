@@ -150,6 +150,8 @@ The waveform is useful for examining:
 - Seven-segment display output changes.
 - Timing relationships between sequential signals.
 
+##### We have to right click on countdown[5:0] as select Data format then select signed decimal, for segs[] select Binary
+
 The waveform provides visual evidence of the controller's behavior during the simulation.
 
 ## 8. Signals Observed
