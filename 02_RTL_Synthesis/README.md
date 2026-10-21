@@ -274,12 +274,11 @@ The generated netlists and synthesis reports establish the foundation for the ne
 ---
 
 <p align="center">
-  <b>RTL Design → Synthesis → Technology Mapping → Gate-Level Verification</b>
-  <br><br>
-  <i>Designed and documented by</i>
-  <br>
-  <b>Shaik Farida</b>
-  <br><br>
-  <i>Exploring digital design, synthesis, and VLSI implementation.</i>
+  <b>Designed and Documented by Shaik Farida</b><br/>
+  VLSI Design | RTL Synthesis | Technology Mapping
+</p>
+
+<p align="center">
+  <i>"Every optimized netlist begins with precise logic design and a reliable synthesis flow."</i>
 </p>
 
