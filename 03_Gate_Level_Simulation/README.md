@@ -22,7 +22,7 @@
 - [4. Design Files](#-4-design-files)
 - [5. Simulation Procedure](#-5-simulation-procedure)
 - [6. Waveform Analysis](#-6-waveform-analysis)
-- [7. Verification Checklist](#-7-verification-checklist)
+- [7. RTL vs. Gate-Level Simulation Comparison](#-7-rtl-vs-gate-level-simulation-comparision)
 - [8. Summary](#-8-summary)
 
 ## 1. Introduction
