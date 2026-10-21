@@ -140,7 +140,7 @@ GTKWave displays the recorded signal transitions against simulation time. Add th
 
 ### Waveform Analysis
 
-<img width="1920" height="940" alt="wave" src="https://github.com/user-attachments/assets/dbb4b5b4-edfa-41b6-9f76-9e37b9bd906c" />
+<img width="1920" height="940" alt="traffic_light_rtl_wave" src="https://github.com/user-attachments/assets/bfcc798e-7228-4d2f-a4f9-79f897258027" />
 
 The waveform is useful for examining:
 
