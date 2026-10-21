@@ -1,5 +1,3 @@
-
-
 # 🚦 FSM-Based Traffic Light Controller with Countdown Timer
 
 ## Project Overview
@@ -29,6 +27,8 @@ The objective of this project is to develop an FSM-based traffic light controlle
 The proposed system uses a synchronous Finite State Machine to control the sequence of traffic signals. A countdown timer tracks the remaining duration of the active state, while display outputs represent the countdown digits.
 
 The design is described in Verilog HDL and verified through simulation. It is then synthesized using Yosys, evaluated through gate-level simulation, and taken through physical design and post-route timing analysis using SKY130HD technology.
+
+<img width="1000" height="600" alt="traffic_light_controller" src="https://github.com/user-attachments/assets/dace6a9d-0821-445c-ab81-ee003b62a5ad" />
 
 ## Functional Specifications
 
