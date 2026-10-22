@@ -1,1 +1,17 @@
+Traffic Light Controller - Post-Route STA Summary
+Library: sky130_fd_sc_hd__tt_025C_1v80.lib
+Clock period: 20 ns
+Parasitics: 6_final.spef
+
+=== Worst Setup Slack ===
+worst slack max 14.64
+
+=== Worst Hold Slack ===
+worst slack min 0.50
+
+=== WNS ===
+wns max 0.00
+
+=== TNS ===
+tns max 0.00
 
