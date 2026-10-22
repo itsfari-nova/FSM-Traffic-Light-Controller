@@ -1,101 +1,184 @@
 # Static Timing Analysis (STA)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Analysis-OpenSTA-blueviolet?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Technology-SKY130HD-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Stage-Pre--Layout-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Tool-OpenSTA-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Library-SKY130HD-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PVT_Corners-16-orange?style=for-the-badge" />
 </p>
 
 ## Overview
 
-Static Timing Analysis (STA) is used to evaluate the timing behavior of a digital design without applying simulation test vectors. It checks whether signal paths satisfy the required timing constraints.
+In this stage of my **FSM-Based Traffic Light Controller with Countdown Timer** project, I performed Static Timing Analysis (STA) using OpenSTA and the SKY130HD standard-cell library.
 
-In this project, I used **OpenSTA** to analyze the timing characteristics of my **FSM-Based Traffic Light Controller with Countdown Timer**, using the SKY130HD standard-cell library.
+The purpose of STA is to analyze the timing paths of a synthesized digital design and evaluate timing requirements such as setup, hold, and asynchronous reset recovery and removal.
+
+I analyzed the design across 16 configured Process, Voltage, and Temperature (PVT) corners and organized the generated reports for further evaluation.
 
 ## Objectives
 
-- Analyze timing paths in the synthesized design.
-- Apply clock and input/output timing constraints.
-- Evaluate setup and hold timing.
-- Examine timing behavior across multiple process, voltage, and temperature (PVT) corners.
-- Identify timing violations for further investigation.
+- Analyze maximum-delay and minimum-delay timing paths.
+- Define timing constraints using an SDC file.
+- Evaluate setup and hold timing behavior.
+- Examine asynchronous reset recovery and removal checks.
+- Run timing analysis across multiple PVT corners.
+- Compare timing results using graphs.
+- Identify timing violations that may require further investigation.
 
-## Tools and Technology
+## Tools and Technologies
 
-| Component | Details |
+| Component | Description |
 |---|---|
-| Timing Analysis Tool | OpenSTA |
-| Standard-Cell Library | SKY130HD |
-| Timing Constraints | Synopsys Design Constraints (SDC) |
-| Design | FSM-Based Traffic Light Controller with Countdown Timer |
-| Analysis Stage | Pre-Layout STA |
+| OpenSTA | Static Timing Analysis tool |
+| SKY130HD | Standard-cell library |
+| SDC | Timing constraints |
+| Tcl | Timing analysis script |
+| Shell Script | Multi-corner analysis automation |
+| PVT Analysis | Evaluation across 16 configured corners |
 
-## 📂 Files Used
+## 📂 Project Files
 
-| File | Description |
+| File or Folder | Purpose |
 |---|---|
 | `traffic_light.sdc` | Defines clock and timing constraints |
-| `traffic_light_sta.tcl` | OpenSTA script for loading the design and running timing analysis |
-| `run_all_corners.sh` | Automates timing analysis across configured PVT corners |
-| `reports/` | Stores generated timing reports |
+| `traffic_light_sta.tcl` | Loads the timing environment and runs STA commands |
+| `run_all_corners.sh` | Automates analysis across configured PVT corners |
+| `reports/` | Contains 16 generated timing reports |
+| `reports/README.md` | Explains the report files and their contents |
 
-## Timing Analysis Flow
+## Commands Used
 
-1. Load the SKY130HD timing library.
-2. Read the synthesized gate-level netlist.
-3. Define the clock and timing constraints.
-4. Check the design and timing environment.
-5. Run setup and hold timing analysis.
-6. Repeat the analysis across the configured PVT corners.
-7. Review the reports and identify timing violations.
+The following commands are used to access the project files and run the multi-corner analysis script.
 
-## Timing Parameters
+### 1. Navigate to the Project Directory
 
-### Setup Timing
+```bash
+cd ~/traffic_light
+```
 
-Setup analysis checks whether data reaches a sequential element early enough before the active clock edge.
+### 2. Inspect the Project Files
 
-### Hold Timing
+```bash
+ls
+ls reports
+```
 
-Hold analysis checks whether data remains stable for the required interval after the active clock edge.
+These commands list the project files and the generated timing reports.
 
-### Slack
+### 3. Inspect the Timing Constraints
 
-Slack represents the difference between the required arrival time and the actual arrival time, using the timing tool's reporting convention.
+```bash
+cat traffic_light.sdc
+```
 
-- **Positive slack:** The checked timing requirement is satisfied.
-- **Negative slack:** The checked timing requirement is violated.
+The SDC file specifies timing constraints used by the timing analysis flow.
 
-## Multi-Corner Analysis
+### 4. Inspect the OpenSTA Script
 
-The design was evaluated using multiple PVT corners from the SKY130HD library. These corners represent different process conditions, temperatures, and supply voltages.
+```bash
+cat traffic_light_sta.tcl
+```
 
-The purpose of multi-corner analysis is to identify timing behavior under different operating conditions rather than relying on a single typical corner.
+The Tcl script contains the commands used to configure and perform timing analysis.
 
-## Timing Results and Observations
+### 5. Inspect the Multi-Corner Script
 
-The earlier timing analysis reported a setup timing violation at the `ss_n40C_1v28` corner, with a worst negative slack (WNS) of approximately **−6.33 ns**. The other 15 configured corners showed positive setup slack in that run.
+```bash
+cat run_all_corners.sh
+```
 
-The reported hold slack was positive across all 16 corners.
+This script contains the automation commands for running STA across the configured corners.
 
-These results indicate that the design requires further investigation at the identified setup corner. The actual reports should be retained to support these observations.
+### 6. Run the Multi-Corner Analysis
 
-> **Note:** These are results from an earlier analysis run. Confirm them against the reports included in this repository before treating them as final.
+```bash
+chmod +x run_all_corners.sh
+./run_all_corners.sh
+```
 
-## Conclusion
+The first command grants execute permission to the shell script. The second runs the analysis script.
 
-Static Timing Analysis provides an important view of the timing behavior of the synthesized traffic light controller. By examining setup slack, hold slack, and multiple PVT corners, I identified a corner that requires additional setup-timing investigation.
+**Note:** These are reproducible workflow commands. The exact OpenSTA invocation and input files depend on the contents of `traffic_light_sta.tcl` and `run_all_corners.sh`.
 
-This stage establishes the timing-analysis baseline for the subsequent physical-design and post-layout analysis stages.
+## Multi-Corner Timing Analysis
+
+The design was analyzed across 16 configured PVT corners.
+
+| Process Corner | Operating Conditions |
+|---|---|
+| FF | Fast process conditions |
+| SS | Slow process conditions |
+| TT | Typical process conditions |
+
+The corner names also identify the temperature and supply-voltage conditions.
+
+Analyzing multiple corners helps evaluate how timing behavior changes under different operating conditions.
+
+## Timing Results and Graphical Analysis
+
+The generated reports contain maximum-delay and minimum-delay timing paths, arrival times, required times, slack values, and timing summaries.
+
+The timing results were organized for graphical comparison across the configured PVT corners.
+
+### Setup Timing Analysis
+
+Setup timing analysis evaluates whether data reaches a sequential element early enough to satisfy its setup requirement.
+
+The setup slack values can be compared across PVT corners to identify the conditions with the smallest timing margin.
+
+### Hold and Minimum-Delay Analysis
+
+Minimum-delay analysis checks short data paths and includes hold-related and asynchronous reset removal checks.
+
+Negative slack indicates a violation of the particular timing requirement being checked. The type of check must be considered when interpreting the result.
+
+### Timing Graphs
+
+Add your generated graph images below. Upload the graph files to this folder using the filenames shown here, or update the paths to match your actual image filenames.
+
+#### Setup Slack Across PVT Corners
+
+![Setup Slack Comparison](setup_slack_comparison.png)
+
+#### Hold or Minimum-Delay Slack Across PVT Corners
+
+![Minimum-Delay Slack Comparison](hold_slack_comparison.png)
+
+The graphs make it easier to compare timing behavior between operating corners and identify conditions that require further investigation.
+
+## Important Timing Concepts
+
+- **Setup Slack:** Indicates whether data meets the setup timing requirement.
+- **Hold Slack:** Indicates whether data meets the hold timing requirement.
+- **WNS:** Worst Negative Slack, a summary of the worst timing slack under the reported analysis convention.
+- **TNS:** Total Negative Slack, a summary of negative slack across violating timing paths.
+- **Recovery Check:** Evaluates asynchronous reset deassertion timing relative to a clock edge.
+- **Removal Check:** Evaluates the minimum timing requirement associated with asynchronous reset deassertion.
+
+The meaning of each reported slack value depends on the timing check and report convention.
+
+## 📁 Timing Reports
+
+The `reports/` folder contains individual `.rpt` files for all 16 configured PVT corners.
+
+Each report can be opened to inspect its timing paths, timing checks, slack values, and summary information.
+
+For details about the report files, see [`reports/README.md`](reports/README.md).
+
+## Summary
+
+This stage documents the Static Timing Analysis workflow for my traffic light controller using OpenSTA and the SKY130HD standard-cell library.
+
+I configured timing constraints, automated analysis across multiple PVT corners, reviewed the generated reports, and organized timing results for graphical comparison.
+
+The reports and graphs provide a basis for investigating timing behavior and identifying potential issues for further optimization.
 
 ---
 
 <p align="center">
   <b>Designed and Documented by Shaik Farida</b><br/>
-  VLSI Design | Static Timing Analysis | OpenSTA
+  VLSI Design | Static Timing Analysis | OpenSTA | Multi-Corner Analysis
 </p>
 
 <p align="center">
-  <i>"Reliable digital design requires not only correct logic, but also timing that meets its constraints."</i>
+  <i>"A reliable digital design must satisfy its timing requirements across its intended operating conditions."</i>
 </p>
-
