@@ -12,25 +12,22 @@
 
 ## Table of Contents
 
-- [1. Project Overview](#-1-project-overview)
-- [2. Objectives](#-2-objectives)
-- [3. Tools and Technologies](#-3-tools-and-technologies)
-- [4. Post-Layout STA Methodology](#-4-post-layout-sta-methodology)
-- [5. Understanding Setup and Hold Timing](#-5-understanding-setup-and-hold-timing)
-- [6. Important Timing Metrics](#-6-important-timing-metrics)
-- [7. Multi-Corner PVT Analysis](#-7-multi-corner-pvt-analysis)
-- [8. Post-Layout STA Results](#-8-post-layout-sta-results)
-- [9. Timing Graphs](#-9-timing-graphs)
-- [10. Pre-Layout vs Post-Layout STA](#-10-pre-layout-vs-post-layout-sta)
-- [11. Tcl Automation Script](#-11-tcl-automation-script)
-- [12. Terminal Screenshots](#-12-terminal-screenshots)
-- [13. Repository Structure](#-13-repository-structure)
-- [14. Key Learnings](#-14-key-learnings)
-- [15. Conclusion](#-15-conclusion)
+- [Project Overview](#-project-overview)
+- [Objectives](#-objectives)
+- [Tools and Technologies](#-tools-and-technologies)
+- [Post-Layout STA Methodology](#-post-layout-sta-methodology)
+- [Understanding Setup and Hold Timing](#-understanding-setup-and-hold-timing)
+- [Multi-Corner PVT Analysis](#-multi-corner-pvt-analysis)
+- [Post-Layout STA Results](#-post-layout-sta-results)
+- [Timing Graphs](#-timing-graphs)
+- [Pre-Layout vs Post-Layout STA](#-pre-layout-vs-post-layout-sta)
+- [Tcl Automation Script](#-tcl-automation-script)
+- [Key Learnings](#-key-learnings)
+- [Conclusion](#-conclusion)
 
 ---
 
-## 1. Overview
+## Overview
 
 In this stage of my **FSM-Based Traffic Light Controller with Countdown Timer** project, I performed **Post-Layout Static Timing Analysis (STA)** using OpenSTA and the SKY130 HD standard-cell library.
 
@@ -40,7 +37,7 @@ The analysis covered setup timing, hold timing, worst slack, Worst Negative Slac
 
 The main purpose was to understand the timing performance of the physically implemented circuit and identify any timing violations under different operating conditions.
 
-## 2. Objectives
+## Objectives
 
 - Perform timing analysis on the final routed design.
 - Analyze setup and hold timing paths.
@@ -51,7 +48,7 @@ The main purpose was to understand the timing performance of the physically impl
 - Identify critical corners requiring further timing optimization.
 - Understand the difference between pre-layout and post-layout timing analysis.
 
-## 3. Tools and Technologies
+## Tools and Technologies
 
 | Component | Description |
 |---|---|
@@ -67,7 +64,7 @@ The main purpose was to understand the timing performance of the physically impl
 | Configured clock period | 20 ns |
 | PVT analysis | 16 configured corners |
 
-## 4. Post-Layout STA Methodology
+## Post-Layout STA Methodology
 
 ### Step 1 — Load the Final Design Database
 
@@ -103,7 +100,7 @@ I reviewed the generated reports to identify the worst setup and hold slack and 
 
 The `ss_n40C_1v28` corner reported negative setup slack, making it an important result to investigate.
 
-## 5. Understanding Setup and Hold Timing
+## Understanding Setup and Hold Timing
 
 ### 🔹 Setup Timing
 
@@ -129,7 +126,7 @@ Timing slack represents the margin between the required and actual timing of a p
 - **Negative slack:** The corresponding timing requirement is violated.
 - **Zero slack:** The path is at the timing limit.
 
-## 7. Multi-Corner PVT Analysis
+## Multi-Corner PVT Analysis
 
 PVT stands for **Process, Voltage, and Temperature**.
 
@@ -156,9 +153,9 @@ Different combinations of these conditions can change cell delays and circuit ti
 
 The corner names encode the configured process, temperature, and voltage. The library configuration determines the exact electrical models used in each analysis.
 
-## 8. Post-Layout STA Results
+## Post-Layout STA Results
 
-<img width="1600" height="894" alt="Post_sta_ternimal" src="https://github.com/user-attachments/assets/d78f56c4-a28e-4a68-ad9c-08e263e167b0" />
+<img width="1600" height="800" alt="Post_sta_ternimal" src="https://github.com/user-attachments/assets/d78f56c4-a28e-4a68-ad9c-08e263e167b0" />
 
 ### Typical Corner — `tt_025C_1v80`
 
@@ -187,10 +184,10 @@ Although the analysis run completed successfully, the design does not meet the r
 
 ### Summary of the Analysis
 
-<img width="1145" height="1018" alt="post_sta_results" src="https://github.com/user-attachments/assets/953bee71-ea10-403b-a176-927873cc71c3" />
+<img width="1145" height="950" alt="post_sta_results" src="https://github.com/user-attachments/assets/953bee71-ea10-403b-a176-927873cc71c3" />
 
 
-<img width="1091" height="1028" alt="post_sta_summary" src="https://github.com/user-attachments/assets/11c48cc7-f305-4871-ab3e-9b5f3d07fdea" />
+<img width="1000" height="900" alt="post_sta_summary" src="https://github.com/user-attachments/assets/11c48cc7-f305-4871-ab3e-9b5f3d07fdea" />
 
 ---
 
@@ -200,7 +197,7 @@ Although the analysis run completed successfully, the design does not meet the r
 - Timing behavior varied across the configured PVT conditions.
 - Further timing investigation may be required to resolve the negative setup slack.
 
-## 9. Timing Graphs
+## Timing Graphs
 
 The following graph uses the wns and tns values from the combined 16-corner summary.
 
@@ -211,9 +208,12 @@ The following graph uses the wns and tns values from the combined 16-corner summ
 
 ---
 
-## 10. Pre-Layout vs Post-Layout STA
+## Pre-Layout vs Post-Layout STA
 
 Pre-layout and post-layout STA evaluate timing at different stages of the design flow.
+
+<img width="1145" height="1021" alt="pre_sta vs post_sta" src="https://github.com/user-attachments/assets/21ae14a3-a155-4e9c-b35a-a8eac66775fd" />
+
 
 | Aspect | Pre-Layout STA | Post-Layout STA |
 |---|---|---|
@@ -223,20 +223,6 @@ Pre-layout and post-layout STA evaluate timing at different stages of the design
 | Main purpose | Evaluate timing before final physical implementation | Evaluate timing with physical implementation effects |
 | Timing behavior | Based on the pre-layout models and assumptions | Includes the modeled physical interconnect effects |
 
-### Pre-Layout vs Post-Layout Comparison
-
-A meaningful numerical comparison requires the actual pre-layout and post-layout results measured with known constraints and compatible timing settings.
-
-| Metric | Pre-Layout | Post-Layout |
-|---|---:|---:|
-| Clock period | Confirm from pre-layout constraints | 20 ns |
-| Worst setup slack | Pending pre-layout report | 14.64 ns at `tt_025C_1v80` |
-| Worst hold slack | Pending pre-layout report | 0.50 ns at `tt_025C_1v80` |
-| Critical setup corner | Pending pre-layout analysis | `ss_n40C_1v28` |
-| Critical-corner setup slack | Pending pre-layout report | −6.33 ns |
-| Timing violations | Pending pre-layout report | Setup violations reported at `ss_n40C_1v28` |
-
-**Important:** The pre-layout values have not been provided yet, so they are intentionally left pending. Do not replace them with assumed or estimated values.
 
 ### Pre-Layout vs Post-Layout Setup Slack
 
@@ -246,7 +232,9 @@ For a fair comparison, use the typical corner for both stages, or compare the sa
 
 The comparison can help reveal how timing estimates change after physical implementation and parasitic extraction.
 
-## 11. Tcl Automation Script
+<img width="1210" height="605" alt="pre_vs_post_setup_slack" src="https://github.com/user-attachments/assets/5901a96b-88bb-4dc9-afc8-6da0a1ea2ad8" />
+
+## Tcl Automation Script
 
 The `sta_one.tcl` script automates the main steps of the timing analysis.
 
@@ -263,32 +251,6 @@ Its operations include:
 
 The script uses environment variables such as `FLOW_HOME`, `CORNER`, and `REPORT_DIR`. These must be configured appropriately when running it in another environment.
 
-## 12. Terminal Screenshots
-
-I captured terminal screenshots to document the execution of the STA script and the generated timing results.
-
-Upload your actual screenshots to `06_Post_Layout_STA/images/`, then use the exact filenames below or replace them with your own filenames.
-
-### Screenshot 1 — STA Execution
-
-![Post-route STA execution](images/sta_execution.png)
-
-*Terminal output showing the STA script execution.*
-
-### Screenshot 2 — Multi-Corner STA Results
-
-![Multi-corner STA results](images/sta_16_corner_results.png)
-
-*Combined summary showing the configured corners and run status.*
-
-### Screenshot 3 — Timing Report
-
-![Post-layout timing report](images/sta_timing_report.png)
-
-*Terminal output showing the timing analysis results.*
-
-> **Screenshot note:** GitHub will display the images only after the corresponding image files have been uploaded. The filenames in the Markdown must match the uploaded filenames exactly.
-
 ### Report Descriptions
 
 - `summary.txt` — summary for the typical timing corner.
@@ -300,7 +262,7 @@ Upload your actual screenshots to `06_Post_Layout_STA/images/`, then use the exa
 
 - `sta_one.tcl` — Tcl script used to load the design and timing data, perform timing checks, and generate reports.
 
-## 14. Key Learnings
+## Key Learnings
 
 Through this stage, I learned:
 
@@ -313,7 +275,7 @@ Through this stage, I learned:
 - How to identify critical timing corners using multi-corner reports.
 - Why successful tool execution does not necessarily mean all timing constraints are satisfied.
 
-## 15. Conclusion
+## Conclusion
 
 I completed the configured post-route STA runs for all 16 PVT corners of my FSM-Based Traffic Light Controller with Countdown Timer.
 
@@ -326,5 +288,7 @@ A pre-layout versus post-layout comparison can be completed once the correspondi
 ---
 
 <p align="center">
-  <b>“A successful physical design is not only about implementation, but also about meeting timing across operating conditions.”</b>
+  <b> From RTL Design to Physical Implementation and Timing Verification</b><br>
+  <i>Learning VLSI, one timing path at a time.</i><br><br>
+  <b>Documented by Shaik Farida</b>
 </p>
