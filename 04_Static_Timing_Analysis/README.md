@@ -111,6 +111,10 @@ The design was analyzed across 16 configured PVT corners.
 
 The corner names also identify the temperature and supply-voltage conditions.
 
+<img width="1201" height="1020" alt="Screenshot 2026-10-21 182809" src="https://github.com/user-attachments/assets/3bf207c6-a19a-48cb-8f8c-df2695518a41" />
+
+<img width="870" height="907" alt="Screenshot 2026-10-21 182842" src="https://github.com/user-attachments/assets/fee0e093-9676-4e3c-87b0-4df0d4997ebb" />
+
 Analyzing multiple corners helps evaluate how timing behavior changes under different operating conditions.
 
 ## Timing Results and Graphical Analysis
@@ -133,7 +137,9 @@ Negative slack indicates a violation of the particular timing requirement being 
 
 ### Timing Graphs
 
-Add your generated graph images below. Upload the graph files to this folder using the filenames shown here, or update the paths to match your actual image filenames.
+<img width="1210" height="605" alt="TNS_by_corner" src="https://github.com/user-attachments/assets/1c15a83e-9225-4e19-ac2a-9e10840db3cc" />
+
+<img width="1210" height="605" alt="WNS_by_corner" src="https://github.com/user-attachments/assets/2fb7796d-6ac2-4e68-a41b-5b8f3b037085" />
 
 #### Setup Slack Across PVT Corners
 
