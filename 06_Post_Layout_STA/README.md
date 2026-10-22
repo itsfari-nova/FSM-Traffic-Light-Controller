@@ -129,19 +129,6 @@ Timing slack represents the margin between the required and actual timing of a p
 - **Negative slack:** The corresponding timing requirement is violated.
 - **Zero slack:** The path is at the timing limit.
 
-## 6. Important Timing Metrics
-
-| Metric | Description |
-|---|---|
-| Worst setup slack | Slack of the worst setup path |
-| Worst hold slack | Slack of the worst hold path |
-| WNS | Worst Negative Slack; indicates the most severe setup violation when one exists |
-| TNS | Total Negative Slack; accumulates negative slack across violating setup paths |
-| Clock period | Time interval between successive active clock edges |
-| Parasitics | Interconnect resistance and capacitance information used for physical timing analysis |
-
-WNS and TNS are useful for assessing setup timing violations. Detailed timing reports should also be reviewed to understand the critical paths and their causes.
-
 ## 7. Multi-Corner PVT Analysis
 
 PVT stands for **Process, Voltage, and Temperature**.
@@ -170,6 +157,8 @@ Different combinations of these conditions can change cell delays and circuit ti
 The corner names encode the configured process, temperature, and voltage. The library configuration determines the exact electrical models used in each analysis.
 
 ## 8. Post-Layout STA Results
+
+<img width="1600" height="894" alt="Post_sta_ternimal" src="https://github.com/user-attachments/assets/d78f56c4-a28e-4a68-ad9c-08e263e167b0" />
 
 ### Typical Corner — `tt_025C_1v80`
 
@@ -206,33 +195,9 @@ Although the analysis run completed successfully, the design does not meet the r
 
 ## 9. Timing Graphs
 
-The following graph uses the worst setup slack values from the combined 16-corner summary.
+The following graph uses the wns and tns values from the combined 16-corner summary.
 
-### Graph 1 — Worst Setup Slack Across PVT Corners
 
-```mermaid
-xychart-beta
-    title "Post-Layout Worst Setup Slack by PVT Corner"
-    x-axis ["ff100_165","ff100_195","ff40_156","ff40_165","ff40_176","ff40_195","ss100_140","ss100_160","ss40_128","ss40_135","ss40_140","ss40_144","ss40_160","ss40_176","tt25_180","tt100_180"]
-    y-axis "Setup Slack (ns)" -8 --> 18
-    bar [15.27,15.86,14.60,15.04,15.43,15.88,8.79,11.70,-6.33,1.47,4.68,6.43,10.79,12.78,14.64,14.66]
-```
-
-*Note: The x-axis labels are shortened for readability. Their full corner names are listed in Section 7.*
-
-The graph shows that `ss_n40C_1v28` has the lowest reported setup slack and is the critical setup corner in the supplied summary.
-
-### Graph 2 — Typical-Corner Setup and Hold Slack
-
-```mermaid
-xychart-beta
-    title "Typical Corner Slack Comparison"
-    x-axis ["Worst Setup Slack","Worst Hold Slack"]
-    y-axis "Slack (ns)" 0 --> 16
-    bar [14.64,0.50]
-```
-
-This graph compares the reported worst setup and hold slack values at `tt_025C_1v80`. The two values refer to different timing checks and should not be interpreted as interchangeable metrics.
 
 ## 10. Pre-Layout vs Post-Layout STA
 
