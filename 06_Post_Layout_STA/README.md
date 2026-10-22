@@ -187,6 +187,13 @@ Although the analysis run completed successfully, the design does not meet the r
 
 ### Summary of the Analysis
 
+<img width="1145" height="1018" alt="post_sta_results" src="https://github.com/user-attachments/assets/953bee71-ea10-403b-a176-927873cc71c3" />
+
+
+<img width="1091" height="1028" alt="post_sta_summary" src="https://github.com/user-attachments/assets/11c48cc7-f305-4871-ab3e-9b5f3d07fdea" />
+
+---
+
 - All 16 configured corner runs completed without a reported run failure.
 - The typical corner reported positive worst setup and hold slack.
 - The `ss_n40C_1v28` corner reported a setup timing violation.
@@ -197,7 +204,12 @@ Although the analysis run completed successfully, the design does not meet the r
 
 The following graph uses the wns and tns values from the combined 16-corner summary.
 
+<img width="1210" height="605" alt="post_TNS_by_corner" src="https://github.com/user-attachments/assets/5232914a-3377-4e03-ae97-02233477b68a" />
 
+
+<img width="1210" height="605" alt="post_WNS_by_corner" src="https://github.com/user-attachments/assets/af14fb53-10bb-4107-8649-96d00ff92f2c" />
+
+---
 
 ## 10. Pre-Layout vs Post-Layout STA
 
@@ -226,7 +238,7 @@ A meaningful numerical comparison requires the actual pre-layout and post-layout
 
 **Important:** The pre-layout values have not been provided yet, so they are intentionally left pending. Do not replace them with assumed or estimated values.
 
-### Graph 3 — Pre-Layout vs Post-Layout Setup Slack
+### Pre-Layout vs Post-Layout Setup Slack
 
 Once the pre-layout setup slack values are available, add a comparison graph using the same timing metric, clock constraints, and corresponding analysis corners.
 
