@@ -111,9 +111,9 @@ The design was analyzed across 16 configured PVT corners.
 
 The corner names also identify the temperature and supply-voltage conditions.
 
-<img width="1201" height="1020" alt="Screenshot 2026-10-21 182809" src="https://github.com/user-attachments/assets/3bf207c6-a19a-48cb-8f8c-df2695518a41" />
+<img width="1201" height="1000" alt="Screenshot 2026-10-21 182809" src="https://github.com/user-attachments/assets/3bf207c6-a19a-48cb-8f8c-df2695518a41" />
 
-<img width="870" height="907" alt="Screenshot 2026-10-21 182842" src="https://github.com/user-attachments/assets/fee0e093-9676-4e3c-87b0-4df0d4997ebb" />
+<img width="870" height="900" alt="Screenshot 2026-10-21 182842" src="https://github.com/user-attachments/assets/fee0e093-9676-4e3c-87b0-4df0d4997ebb" />
 
 Analyzing multiple corners helps evaluate how timing behavior changes under different operating conditions.
 
