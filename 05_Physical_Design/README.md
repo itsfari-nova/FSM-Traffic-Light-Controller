@@ -129,31 +129,38 @@ The following values were observed in the generated synthesis and final implemen
 
 The OpenROAD flow generated visualizations to help inspect the physical implementation at different stages.
 
-### Placement and Clock Distribution
+### Floorplan
 
-| Final Placement | Clock Tree |
-|:--:|:--:|
-| ![Final Placement](screenshots/final_placement.webp.png) | ![Final Clocks](screenshots/final_clocks.webp.png) |
+<img width="1600" height="899" alt="floorplan" src="https://github.com/user-attachments/assets/b620ff08-bc08-4fcc-b34b-3ce83be6a29f" />
 
-### Routing and Congestion
+---
 
-| Final Routing | Routing Congestion |
-|:--:|:--:|
-| ![Final Routing](screenshots/final_routing.webp.png) | ![Final Congestion](screenshots/final_congestion.webp.png) |
+### Placement
 
-### Additional Physical-Design Analysis
+<img width="1600" height="899" alt="placement" src="https://github.com/user-attachments/assets/e4902e78-32a8-4cbd-a241-a12042490327" />
 
-| Final Resizer | IR Drop |
-|:--:|:--:|
-| ![Final Resizer](screenshots/final_resizer.webp.png) | ![Final IR Drop](screenshots/final_ir_drop.webp.png) |
+---
 
-### Critical Timing Path
+### CTS
 
-<p align="center">
-  <img src="screenshots/final_worst_path.webp.png" alt="Final Worst Timing Path" width="850"/>
-</p>
+<img width="1600" height="899" alt="cts1" src="https://github.com/user-attachments/assets/fd7b9b6e-b50d-4bf3-819b-8803260898b1" />
 
-*The visualizations will appear after the corresponding image files are uploaded to the `screenshots/` directory.*
+
+<img width="1600" height="899" alt="cts2" src="https://github.com/user-attachments/assets/47083afc-5788-433e-8d57-35e2d3d133b9" />
+
+---
+
+### Routing
+
+<img width="1600" height="899" alt="route1" src="https://github.com/user-attachments/assets/6afcf58f-f5cc-4c68-bda5-05ed9d70e813" />
+
+
+<img width="1600" height="899" alt="route2" src="https://github.com/user-attachments/assets/1accff45-5f00-47f7-8845-d8068e8e5b02" />
+
+
+<img width="1600" height="899" alt="route3" src="https://github.com/user-attachments/assets/d0797329-dda5-49d3-85c1-7360665de570" />
+
+---
 
 ## Reports and Analysis
 
