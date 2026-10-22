@@ -1,1 +1,71 @@
+vscode@codespaces-2693b8:~/Desktop/OpenROAD-flow-scripts/flow$ head -70 results/sky130hd/traffic_light/base/6_final.spef
+*SPEF "ieee 1481-1999"
+*DESIGN "traffic_light"
+*DATE "08:04:29 Wednesday October 21, 2026"
+*VENDOR "The OpenROAD Project"
+*PROGRAM "OpenROAD"
+*VERSION "v2.0-25794-g7cbd77e248"
+*DESIGN_FLOW "NAME_SCOPE LOCAL" "PIN_CAP NONE"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1 NS
+*C_UNIT 1 PF
+*R_UNIT 1 OHM
+*L_UNIT 1 HENRY
 
+*NAME_MAP
+*1 _000_
+*2 _001_
+*3 _002_
+*4 _003_
+*5 _004_
+*6 _005_
+*7 _006_
+*8 _007_
+*9 _008_
+*10 _009_
+*11 _010_
+*12 _011_
+*13 _012_
+*14 _013_
+*15 _014_
+*16 _015_
+*17 _016_
+*18 _017_
+*19 _018_
+*20 _019_
+*21 _020_
+*22 _021_
+*23 _022_
+*24 _023_
+*25 _024_
+*26 _025_
+*27 _026_
+*28 _027_
+*29 _028_
+*30 _029_
+*31 _030_
+*32 _031_
+*33 _032_
+*34 _033_
+*35 _034_
+*36 _035_
+*37 _036_
+*38 _037_
+*39 _038_
+*40 _039_
+*41 _040_
+*42 _041_
+*43 _042_
+*44 _043_
+*45 _044_
+*46 _045_
+*47 _046_
+*48 _047_
+*49 _048_
+*50 _049_
+*51 _050_
+*52 _051_
+*53 _052_
+*54 _053_
