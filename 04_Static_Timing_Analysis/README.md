@@ -141,14 +141,6 @@ Negative slack indicates a violation of the particular timing requirement being 
 
 <img width="1210" height="605" alt="WNS_by_corner" src="https://github.com/user-attachments/assets/2fb7796d-6ac2-4e68-a41b-5b8f3b037085" />
 
-#### Setup Slack Across PVT Corners
-
-![Setup Slack Comparison](setup_slack_comparison.png)
-
-#### Hold or Minimum-Delay Slack Across PVT Corners
-
-![Minimum-Delay Slack Comparison](hold_slack_comparison.png)
-
 The graphs make it easier to compare timing behavior between operating corners and identify conditions that require further investigation.
 
 ## Important Timing Concepts
