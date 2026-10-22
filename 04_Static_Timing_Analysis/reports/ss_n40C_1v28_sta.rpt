@@ -1,1 +1,144 @@
+OpenSTA 3.1.0 2996e37a3a Copyright (c) 2026, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+
+========== MAXIMUM DELAY PATHS ==========
+Startpoint: reset (input port clocked by clk)
+Endpoint: _392_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   1.00    1.00 v input external delay
+   0.00    1.00 v reset (in)
+   0.13    1.13 ^ _182_/Y (sky130_fd_sc_hd__clkinv_1)
+   0.00    1.13 ^ _392_/SET_B (sky130_fd_sc_hd__dfstp_2)
+           1.13   data arrival time
+
+  20.00   20.00   clock clk (rise edge)
+   0.00   20.00   clock network delay (ideal)
+   0.00   20.00   clock reconvergence pessimism
+          20.00 ^ _392_/CLK (sky130_fd_sc_hd__dfstp_2)
+   0.65   20.65   library recovery time
+          20.65   data required time
+---------------------------------------------------------
+          20.65   data required time
+          -1.13   data arrival time
+---------------------------------------------------------
+          19.52   slack (MET)
+
+
+Startpoint: _417_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _394_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _417_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   2.22    2.22 v _417_/Q (sky130_fd_sc_hd__dfrtp_1)
+   5.49    7.70 v _186_/X (sky130_fd_sc_hd__or4_1)
+   1.26    8.97 v _203_/Y (sky130_fd_sc_hd__nand4b_1)
+   1.50   10.46 ^ _204_/Y (sky130_fd_sc_hd__nor4_1)
+   0.93   11.39 v _205_/Y (sky130_fd_sc_hd__nand2_1)
+   1.57   12.96 v _206_/X (sky130_fd_sc_hd__and3_1)
+   1.61   14.57 ^ _215_/Y (sky130_fd_sc_hd__nor2_1)
+   3.57   18.15 v _235_/X (sky130_fd_sc_hd__mux2_1)
+   0.00   18.15 v _394_/D (sky130_fd_sc_hd__dfrtp_1)
+          18.15   data arrival time
+
+  20.00   20.00   clock clk (rise edge)
+   0.00   20.00   clock network delay (ideal)
+   0.00   20.00   clock reconvergence pessimism
+          20.00 ^ _394_/CLK (sky130_fd_sc_hd__dfrtp_1)
+  -1.78   18.22   library setup time
+          18.22   data required time
+---------------------------------------------------------
+          18.22   data required time
+         -18.15   data arrival time
+---------------------------------------------------------
+           0.07   slack (MET)
+
+
+
+========== MINIMUM DELAY PATHS ==========
+Startpoint: reset (input port clocked by clk)
+Endpoint: _393_ (removal check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   1.00    1.00 v input external delay
+   0.00    1.00 v reset (in)
+   0.13    1.13 ^ _352_/Y (sky130_fd_sc_hd__clkinv_1)
+   0.00    1.13 ^ _393_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           1.13   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _393_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   2.36    2.36   library removal time
+           2.36   data required time
+---------------------------------------------------------
+           2.36   data required time
+          -1.13   data arrival time
+---------------------------------------------------------
+          -1.22   slack (VIOLATED)
+
+
+Startpoint: _397_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _397_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _397_/CLK (sky130_fd_sc_hd__dfstp_2)
+   1.83    1.83 v _397_/Q (sky130_fd_sc_hd__dfstp_2)
+   0.34    2.17 ^ _226_/Y (sky130_fd_sc_hd__o31ai_1)
+   0.23    2.40 v _228_/Y (sky130_fd_sc_hd__nand2_1)
+   0.00    2.40 v _397_/D (sky130_fd_sc_hd__dfstp_2)
+           2.40   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _397_/CLK (sky130_fd_sc_hd__dfstp_2)
+  -0.15   -0.15   library hold time
+          -0.15   data required time
+---------------------------------------------------------
+          -0.15   data required time
+          -2.40   data arrival time
+---------------------------------------------------------
+           2.54   slack (MET)
+
+
+
+========== WORST MAXIMUM SLACK ==========
+worst slack max 0.07
+
+========== WORST MINIMUM SLACK ==========
+worst slack min -1.22
+
+========== SETUP WNS AND TNS ==========
+wns max 0.00
+tns max 0.00
+
+========== MINIMUM-DELAY WNS AND TNS ==========
+wns min -1.22
+tns min -44.03
 
