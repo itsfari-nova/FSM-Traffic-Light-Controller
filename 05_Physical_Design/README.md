@@ -125,6 +125,16 @@ The following values were observed in the generated synthesis and final implemen
 
 > **Note:** The cell count and area are from the synthesis statistics, before subsequent physical-design optimization. The final setup, hold, and worst-slack values are from `6_finish.rpt`. Interpret timing values according to the units and metric definitions in the original report. Power is an estimate based on the flow's modeling assumptions.
 
+## Config.mk File
+
+The path to traffic light in openROAD is shown as below
+
+<img width="1600" height="900" alt="WhatsApp Image 2026-10-22 at 11 32 05 AM" src="https://github.com/user-attachments/assets/613e457b-c03b-45bf-90ab-517470c7a7b9" />
+
+In traffic_light folder we have Config.mk File
+
+<img width="1600" height="792" alt="WhatsApp Image 2026-10-22 at 11 32 05 AM (1)" src="https://github.com/user-attachments/assets/caa98e48-4ff7-464f-be13-8a42073705e7" />
+
 ## Physical-Design Visualization Gallery
 
 The OpenROAD flow generated visualizations to help inspect the physical implementation at different stages.
