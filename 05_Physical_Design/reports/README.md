@@ -6,11 +6,11 @@ This directory contains the physical design reports of my **FSM-Based Traffic Li
 
 | Report File | Description |
 |---|---|
-| `2_floorplan_final.rpt` | Floorplanning results |
-| `3_global_place.rpt` | Global placement analysis |
-| `3_detailed_place.rpt` | Detailed placement results |
-| `3_resizer.rpt` | Timing optimization and cell resizing |
-| `4_cts_final.rpt` | Clock Tree Synthesis (CTS) results |
+| `2_floorplan_final.rpt` | Reports results after floorplanning, including initial physical-design and timing information. |
+| `3_global_place.rpt` |Provides results after global placement, where standard cells are approximately positioned across the floorplan.|
+| `3_detailed_place.rpt` | Reports the results of detailed placement, where cell locations are refined to legal positions. |
+| `3_resizer.rpt` | Contains results from timing-driven optimization, including cell resizing and buffering.|
+| `4_cts_final.rpt` |Reports results after Clock Tree Synthesis (CTS), which builds the clock distribution network.|
 | `5_global_route.rpt` | Global routing analysis |
 | `6_finish.rpt` | Final physical design and timing results |
 | `synth_stat.txt` | Synthesized cell statistics and area |
