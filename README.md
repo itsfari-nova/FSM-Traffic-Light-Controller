@@ -127,8 +127,6 @@ The documented stages include:
 
 #### Physical-Design Visualizations
 
-Add or retain the screenshots in your physical-design folder and link them below if the filenames match your uploaded images.
-
 <p align="center">
   <b>Floorplan</b><br/>
   <img src="05_Physical_Design/floorplan.jpeg" alt="OpenROAD Floorplan" width="850"/>
