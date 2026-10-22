@@ -135,6 +135,85 @@ In traffic_light folder we have Config.mk File
 
 <img width="1600" height="792" alt="WhatsApp Image 2026-10-22 at 11 32 05 AM (1)" src="https://github.com/user-attachments/assets/caa98e48-4ff7-464f-be13-8a42073705e7" />
 
+## Running OpenROAD Physical Design Stages with GUI Commands
+
+### 1️⃣ Navigate to the OpenROAD Flow Directory
+
+```bash
+cd ~/Desktop/OpenROAD-flow-scripts/flow
+```
+
+### 2️⃣ Configure the Design
+
+```bash
+make config DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk
+```
+
+### 3️⃣ Synthesis
+
+```bash
+make synth DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk synth
+```
+
+### 4️⃣ Floorplanning
+
+```bash
+make floorplan DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk floorplan
+```
+
+### 5️⃣ Global Placement
+
+```bash
+make place DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk place
+```
+
+### 6️⃣ Clock Tree Synthesis (CTS)
+
+```bash
+make cts DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk cts
+```
+
+### 7️⃣ Global and Detailed Routing
+
+```bash
+make route DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk route
+```
+
+### 8️⃣ Finalize the Physical Design
+
+```bash
+make finish DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk finish
+```
+
+### Open the GUI for Each Stage
+
+**Floorplan GUI**
+```bash
+make gui_floorplan DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk gui_floorplan
+```
+
+**Placement GUI**
+```bash
+make gui_place DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk gui_place
+```
+
+**CTS GUI**
+```bash
+make gui_cts DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk gui_cts
+```
+
+**Routing GUI**
+```bash
+make gui_route DESIGN_CONFIG=./designs/sky130hd/traffic_light/config.mk gui_route
+```
+
+### Important Notes
+
+- Run all commands from the OpenROAD `flow` directory.
+- Ensure that `DESIGN_CONFIG` points to your actual `traffic_light/config.mk` file.
+- Run the implementation stages in sequence when building the design from scratch.
+- GUI targets may vary depending on your OpenROAD Flow Scripts version.
+
 ## Physical-Design Visualization Gallery
 
 The OpenROAD flow generated visualizations to help inspect the physical implementation at different stages.
