@@ -288,7 +288,10 @@ A pre-layout versus post-layout comparison can be completed once the correspondi
 ---
 
 <p align="center">
-  <b> From RTL Design to Physical Implementation and Timing Verification</b><br>
-  <i>Learning VLSI, one timing path at a time.</i><br><br>
-  <b>Documented by Shaik Farida</b>
+  <b>Post-Layout STA Documented by Shaik Farida</b><br/>
+  VLSI Design | Static Timing Analysis | SKY130HD
+</p>
+
+<p align="center">
+  <i>"Every timing path tells a story about the performance and reliability of a digital design."</i>
 </p>
