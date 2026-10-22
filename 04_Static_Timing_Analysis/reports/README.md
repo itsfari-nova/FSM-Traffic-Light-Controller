@@ -2,47 +2,43 @@
 
 ## Overview
 
-This folder contains the timing reports generated using **OpenSTA** for my FSM-Based Traffic Light Controller with Countdown Timer project.
+This folder contains OpenSTA timing reports for the FSM-Based Traffic Light Controller with Countdown Timer project, using the SKY130HD standard-cell library.
 
-The reports document the timing analysis performed using the SKY130HD standard-cell library across 16 configured Process, Voltage, and Temperature (PVT) corners.
+The reports cover 16 configured Process, Voltage, and Temperature (PVT) corners and provide timing information for the analyzed design.
 
-## Purpose
+## 📁 Report Organization
 
-- Evaluate setup and hold timing.
-- Analyze timing slack across different PVT corners.
-- Identify potential timing violations.
-- Compare timing behavior under different operating conditions.
+Each `.rpt` file corresponds to a specific PVT corner:
 
-## 📁 Report Files
+- **FF:** Fast process corner
+- **SS:** Slow process corner
+- **TT:** Typical process corner
 
-Each report corresponds to a specific PVT corner.
+The filenames identify the process corner, temperature, and supply voltage.
 
-- **FF (Fast-Fast):** Fast process corner.
-- **SS (Slow-Slow):** Slow process corner.
-- **TT (Typical-Typical):** Typical process corner.
+## Information in Each Report
 
-The filenames also identify the temperature and supply-voltage conditions.
+Each report includes timing information such as:
 
-## Key Observation
+- Maximum-delay paths and setup-related checks
+- Minimum-delay paths and hold-related checks
+- Asynchronous reset recovery and removal checks
+- Data arrival times and required times
+- Slack values and timing violation summaries
 
-In the earlier analysis, the `ss_n40C_1v28` corner reported a setup Worst Negative Slack (WNS) of approximately **−6.33 ns**. The other 15 configured corners showed positive setup slack in that run.
+## Using the Reports
 
-The reported hold slack was positive across all 16 corners.
-
-These results should be verified against the corresponding report files before drawing final conclusions.
-
-## Conclusion
-
-These reports provide evidence of the pre-layout timing analysis performed on the synthesized traffic light controller. They help identify timing issues that may require further investigation and optimization.
+Open an individual report to inspect its timing paths and slack values. Comparing reports across PVT corners helps identify how operating conditions affect the timing behavior of the design.
 
 ---
 
 <p align="center">
   <b>Designed and Documented by Shaik Farida</b><br/>
-  VLSI Design | Static Timing Analysis | Multi-Corner Analysis
+  VLSI Design | Static Timing Analysis | OpenSTA
 </p>
 
 <p align="center">
-  <i>"Every timing report tells a story about the reliability of a digital design."</i>
+  <i>"Accurate timing analysis helps reveal the timing challenges behind digital hardware."</i>
 </p>
+
 
