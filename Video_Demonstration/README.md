@@ -14,9 +14,7 @@ The video showcases my project workflow, from RTL design and simulation to synth
 
 The video demonstrates the implementation and verification workflow of my project.
 
-▶️ **[Watch the Project Demonstration](PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE)**
-
-> **Note:** Replace the placeholder link with your shareable Google Drive video link.
+▶️ **https://drive.google.com/file/d/1yiFtle2stoUvdLJFZqelRAf5vqHQbCW-/view?usp=sharing**
 
 ---
 
