@@ -190,8 +190,6 @@ The walkthrough can cover:
 
 **▶️ Project Demonstration Video:** https://drive.google.com/file/d/1yiFtle2stoUvdLJFZqelRAf5vqHQbCW-/view?usp=sharing
 
-> Replace the example link with your actual uploaded video URL before publishing. If your video is hosted on Google Drive, use its shareable link instead.
-
 ---
 
 ## Tools and Technologies
