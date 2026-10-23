@@ -188,7 +188,7 @@ The walkthrough can cover:
 - Post-layout STA and PVT-corner results
 - Key observations and project learnings
 
-**▶️ Project Demonstration Video:** [Add your video link here](https://www.youtube.com/)
+**▶️ Project Demonstration Video:** https://drive.google.com/file/d/1yiFtle2stoUvdLJFZqelRAf5vqHQbCW-/view?usp=sharing
 
 > Replace the example link with your actual uploaded video URL before publishing. If your video is hosted on Google Drive, use its shareable link instead.
 
