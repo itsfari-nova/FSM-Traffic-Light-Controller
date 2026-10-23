@@ -268,6 +268,17 @@ By documenting each stage separately, I created a structured record of my learni
 
 This repository represents my practical exploration of an open-source VLSI design flow using Verilog, Yosys, SKY130HD, OpenROAD, and OpenSTA.
 
+
+## Acknowledgement
+
+I extend my sincere gratitude to **Mr. Kunal Ghosh, Co-founder of VLSI System Design (VSD),** for providing this valuable learning opportunity and promoting industry-oriented VLSI education.
+
+My heartfelt thanks to **Mr. Ankit Mawle**, our trainer, for his expert guidance, encouragement, and practical insights throughout the workshop.
+
+This experience has strengthened my technical foundation and deepened my passion for VLSI and semiconductor design.
+
+*Grateful for the guidance, inspired by the learning, and motivated to keep innovating.*
+
 ---
 
 <p align="center">
